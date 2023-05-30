@@ -68,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(this, SIGNAL(colisionEnemigo()), this, SLOT(bajaSalud()));
     connect(this,SIGNAL(salto()), this, SLOT(Actualizar()));
 
-    timer->start(100);
+    timer->start(10);
 }
 
 MainWindow::~MainWindow()
@@ -124,13 +124,13 @@ void MainWindow::Actualizar()
 //Actualiza las velocidades y posiciones del cuerpo
 {
 
-    for (int r=0 ; r<50 ; r++)
+    for (int r=0 ; r<1 ; r++)
     {
         usuario->velocidades();
         usuario->posiciones();
-        if(usuario->y()>=380){
+        if(usuario->collidesWithItem(l4) && W==true){
             usuario->_y=380;
-            usuario->vy=0.1;
+            usuario->vy=-50;
             W=false;
             break;
         }

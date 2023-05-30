@@ -27,6 +27,6 @@ void Personaje::posiciones()
 // calcula y Actualiza las posiciones
 {
     _y = _y + (vy * DT) + (0.5 * GRAV * pow(DT,2));
-    setPos(x(), (-_y/EY));
+    setPos(x(), (_y));
     qDebug() << "Posición y:" << _y;
 }

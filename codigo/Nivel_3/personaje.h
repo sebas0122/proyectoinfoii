@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <QDebug>
 #define EY 6000
-#define GRAV -9.8
+#define GRAV 9.8
 #define DT 0.1
 class Personaje: public QGraphicsItem
 {
@@ -15,7 +15,7 @@ public:
     QRectF boundingRect() const;
     void velocidades();
     void posiciones();
-    float _y=380, vy=0.05;
+    float _y=380, vy=-50;
 
 };
 
