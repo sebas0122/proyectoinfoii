@@ -124,17 +124,14 @@ void MainWindow::Actualizar()
 //Actualiza las velocidades y posiciones del cuerpo
 {
 
-    for (int r=0 ; r<1 ; r++)
-    {
-        usuario->velocidades();
-        usuario->posiciones();
-        if(usuario->collidesWithItem(l4) && W==true){
-            usuario->_y=380;
-            usuario->vy=-50;
-            W=false;
-            break;
-        }
+    usuario->velocidades();
+    usuario->posiciones();
+    if(usuario->collidesWithItem(l4) && W==true){
+        usuario->_y=380;
+        usuario->vy=-50;
+        W=false;
     }
+
 }
 
 void MainWindow::movimientoBotellas(){
