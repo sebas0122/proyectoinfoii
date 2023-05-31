@@ -51,6 +51,7 @@ private:
     Personaje* usuario;
     QTimer *timer;
     void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *ev);
 
     bool W;
     bool D;

@@ -103,9 +103,7 @@ void MainWindow::animar()
 
 void MainWindow::keyPressEvent(QKeyEvent *ev)
 {
-    A=false;
-    W=false;
-    D=false;
+
     if(ev->key()==Qt::Key_W)
     {
         W=true;
@@ -222,5 +220,16 @@ void MainWindow::movimientoEnemigos(){
 
 }
 
+void MainWindow::keyReleaseEvent(QKeyEvent *ev)
+{
+    if(ev->key()==Qt::Key_A)
+    {
+        A=false;
+    }
+    else if(ev->key()==Qt::Key_D)
+    {
+        D=false;
+    }
 
+}
 
