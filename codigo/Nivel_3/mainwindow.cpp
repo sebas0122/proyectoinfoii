@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     scene->addItem(l4);
 
 
+
     usuario = new Personaje();
     scene->addItem(usuario);
     usuario->setPos(250,380);
