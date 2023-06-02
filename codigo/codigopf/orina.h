@@ -10,8 +10,8 @@
 class orina:  public QGraphicsItem
 {
 private:
-    int tamanO,altura;
-    int tiempoalcance,Vo;
+    int tamanO,altura;    //tamanO de la orina; altura es la altura inicial desde donde parte la orina
+    int tiempoalcance,Vo; //tiempoalcance es el tiempo que demora en caer la orina; Vo la velocidad inicial horizantal con la que parte la orina
 
 public:
     orina();

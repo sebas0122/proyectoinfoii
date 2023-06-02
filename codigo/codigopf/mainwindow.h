@@ -5,7 +5,7 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <iostream>
-#include<time.h>
+#include <time.h>
 #include <cstdlib>
 #include "orina.h"
 #include "inodoro.h"
