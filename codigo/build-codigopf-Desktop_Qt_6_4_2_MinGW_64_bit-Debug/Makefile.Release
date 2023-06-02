@@ -254,6 +254,10 @@ release/moc_mainwindow.cpp: ../codigopf/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/QKeyEvent \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
 		../codigopf/orina.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
@@ -261,7 +265,6 @@ release/moc_mainwindow.cpp: ../codigopf/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qbasictimer.h \
@@ -412,7 +415,8 @@ release/inodoro.o: ../codigopf/inodoro.cpp ../codigopf/inodoro.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qfontmetrics.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qbasictimer.h
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qbasictimer.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\inodoro.o ..\codigopf\inodoro.cpp
 
 release/main.o: ../codigopf/main.cpp ../codigopf/mainwindow.h \
@@ -553,6 +557,10 @@ release/main.o: ../codigopf/main.cpp ../codigopf/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/QKeyEvent \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
 		../codigopf/orina.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
@@ -560,7 +568,6 @@ release/main.o: ../codigopf/main.cpp ../codigopf/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qbasictimer.h \
@@ -728,6 +735,10 @@ release/mainwindow.o: ../codigopf/mainwindow.cpp ../codigopf/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/QKeyEvent \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
 		../codigopf/orina.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
@@ -735,42 +746,11 @@ release/mainwindow.o: ../codigopf/mainwindow.cpp ../codigopf/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qbasictimer.h \
 		../codigopf/inodoro.h \
-		ui_mainwindow.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qeventloop.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qjnitypes.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qfuture.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qfutureinterface.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qmutex.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qtsan_impl.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qresultstore.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qfuture_impl.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qthreadpool.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qthread.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qdeadlinetimer.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qelapsedtimer.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qrunnable.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qexception.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QMenuBar \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qmenu.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QStatusBar \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstatusbar.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\codigopf\mainwindow.cpp
 
 release/orina.o: ../codigopf/orina.cpp ../codigopf/orina.h \

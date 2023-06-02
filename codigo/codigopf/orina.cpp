@@ -1,10 +1,10 @@
 #include "orina.h"
 
-orina::orina(int _Vo,float _tiempoalcance,int _tamanO)
+orina::orina(float _Vo,int _tamanO,int _altura)
 {
     Vo=_Vo;
-    tiempoalcance=_tiempoalcance;
     tamanO=_tamanO;
+    altura=_altura;
 }
 
 int orina::getVo()
@@ -12,7 +12,7 @@ int orina::getVo()
     return Vo;
 }
 
-float orina::gettiempoalcance()
+int orina::gettiempoalcance()
 {
     return tiempoalcance;
 }
@@ -20,6 +20,11 @@ float orina::gettiempoalcance()
 int orina::gettamanO()
 {
     return tamanO;
+}
+
+int orina::getaltura()
+{
+    return altura;
 }
 
 QRectF orina::boundingRect() const
@@ -35,15 +40,20 @@ void orina::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWi
 
 void orina::tiempoparabolico()
 {
-    tiempoalcance=(2 * Vo)/g;
+    tiempoalcance=sqrt((2*altura)/G)*1000;
 }
 
 void orina::modiVo(bool ver)
 {
     if (ver){
-        Vo+=5;
+        Vo+=1;
     }
-    else{
-        Vo-=5;
+    else if(ver==false && Vo>1){
+        Vo-=1;
     }
+}
+
+float orina::distancia()
+{
+    return Vo*tiempoalcance;
 }

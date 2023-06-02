@@ -5,12 +5,18 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <iostream>
+#include<time.h>
+#include <cstdlib>
 #include "orina.h"
 #include "inodoro.h"
+#include <iostream>
+
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
 
 class MainWindow : public QMainWindow
 {
@@ -27,17 +33,20 @@ signals:
 
 public slots:
     void aumentarPunt();
-    void animar();
+    void Animar();
+    void variacionarea();
+    void aleatorio();
 
 private:
     Ui::MainWindow *ui;
 
     QGraphicsScene *scene;
 
-    orina* orina1;
-    inodoro* inodoro1;
+    orina *orina1;
+    inodoro *inodoro1;
     QTimer *timer;
     QTimer *timer2;
+    QTimer *timeri;
 
     int puntuacion=0;
 
@@ -46,12 +55,15 @@ private:
     QGraphicsLineItem *l3;
     QGraphicsLineItem *l4;
 
-    float tiempostart=10;
+    int tiempostart=10;
 
-    bool moverI;
-    bool moverD;
-    bool moverA;
-    bool moverB;
-    bool verdad;
+    bool moverI=false;
+    bool moverD=false;
+    bool moverA=false;
+    bool moverB=false;
+    bool verdad=false;
+
+    int area;
+    int entradas=0;
 };
 #endif // MAINWINDOW_H

@@ -1,7 +1,7 @@
 #ifndef ORINA_H
 #define ORINA_H
 
-#define g -9.8
+#define G 9.8
 
 #include <QGraphicsItem>
 #include <QPainter>
@@ -10,16 +10,18 @@
 class orina:  public QGraphicsItem
 {
 private:
-    int Vo,tamanO;
-    float tiempoalcance;
+    int tamanO,altura;
+    int tiempoalcance,Vo;
 
 public:
     orina();
-    orina(int _Vo,float _tiempoalcance,int _tamanO);
+    orina(float _Vo,int _tamanO,int _altura);
 
     int getVo();
-    float gettiempoalcance();
+    int gettiempoalcance();
     int gettamanO();
+    int getaltura();
+    float distancia();
 
     QRectF boundingRect() const;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget);

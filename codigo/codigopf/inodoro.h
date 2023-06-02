@@ -8,6 +8,7 @@
 
 class inodoro : public QGraphicsItem
 {
+
 private:
     int tamano;
     QTimer* timeri;
@@ -16,13 +17,10 @@ public:
     inodoro();
     inodoro(int _tamano);
 
-    int gettamano() const;
+    int gettamano();
 
     QRectF boundingRect() const;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget);
-
-public slots:
-    void variacionarea();
 };
 
 #endif // INODORO_H
