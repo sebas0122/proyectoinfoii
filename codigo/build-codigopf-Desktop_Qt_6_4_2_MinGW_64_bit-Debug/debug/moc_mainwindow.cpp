@@ -26,13 +26,14 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[12];
+    uint offsetsAndSizes[14];
     char stringdata0[11];
     char stringdata1[6];
     char stringdata2[1];
     char stringdata3[13];
     char stringdata4[7];
     char stringdata5[14];
+    char stringdata6[10];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -43,14 +44,16 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(17, 0),  // ""
         QT_MOC_LITERAL(18, 12),  // "aumentarPunt"
         QT_MOC_LITERAL(31, 6),  // "Animar"
-        QT_MOC_LITERAL(38, 13)   // "variacionarea"
+        QT_MOC_LITERAL(38, 13),  // "variacionarea"
+        QT_MOC_LITERAL(52, 9)   // "aleatorio"
     },
     "MainWindow",
     "aviso",
     "",
     "aumentarPunt",
     "Animar",
-    "variacionarea"
+    "variacionarea",
+    "aleatorio"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -61,7 +64,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -69,17 +72,19 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   38,    2, 0x06,    1 /* Public */,
+       1,    1,   44,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   41,    2, 0x0a,    3 /* Public */,
-       4,    0,   42,    2, 0x0a,    4 /* Public */,
-       5,    0,   43,    2, 0x0a,    5 /* Public */,
+       3,    0,   47,    2, 0x0a,    3 /* Public */,
+       4,    0,   48,    2, 0x0a,    4 /* Public */,
+       5,    0,   49,    2, 0x0a,    5 /* Public */,
+       6,    0,   50,    2, 0x0a,    6 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    2,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -104,6 +109,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'Animar'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'variacionarea'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'aleatorio'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -119,6 +126,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->aumentarPunt(); break;
         case 2: _t->Animar(); break;
         case 3: _t->variacionarea(); break;
+        case 4: _t->aleatorio(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -152,13 +160,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
