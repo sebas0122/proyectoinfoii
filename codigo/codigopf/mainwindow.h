@@ -35,10 +35,7 @@ public slots:
     void aumentarPunt();
     void Animar();
     void variacionarea();
-<<<<<<< Updated upstream
     void aleatorio();
-=======
->>>>>>> Stashed changes
 
 private:
     Ui::MainWindow *ui;

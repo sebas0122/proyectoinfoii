@@ -120,7 +120,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *ev)
     if(ev->key()==Qt::Key_A)
     {
         moverI=true;
-        timer2->start(400);
+        timer2->start(tiempostart);
     }
     else if(ev->key()==Qt::Key_S)
     {
@@ -146,113 +146,27 @@ void MainWindow::keyReleaseEvent(QKeyEvent *ev)
         moverD=true;
         timer2->start(tiempostart);
     }
-<<<<<<< Updated upstream
     /*
     if(ev->key()==Qt::Key_A && entradas==1)
     {
         moverI=false;
         entradas=0;
-=======
-}
-
-void MainWindow::Animar()
-{
-    if(moverI)
-    {
-        orina1->setPos(orina1->x()-2,orina1->y());
-        moverI=false;
-    }
-    if(moverD)
-    {
-        orina1->setPos(orina1->x()+2,orina1->y());
-        entradas=1;
-    }
-    if(moverA)
-    {
-        orina1->setPos(orina1->x(),orina1->y()-2);
-        entradas=1;
-    }
-    if(moverB)
-    {
-        orina1->setPos(orina1->x(),orina1->y()+2);
-        entradas=1;
-    }
-    if(orina1->collidesWithItem(inodoro1))
-    {
-        emit aviso(9);
-    }
-}
-
-void MainWindow::keyReleaseEvent(QKeyEvent *ev)
-{
-
-    if(ev->key()==Qt::Key_A)
-    {
-        moverI=true;
-        timer2->start(400);
->>>>>>> Stashed changes
     }
     else if(ev->key()==Qt::Key_S && entradas==1)
     {
-<<<<<<< Updated upstream
         moverB=false;
         entradas=0;
-=======
-        moverB=true;
-        verdad=false;
-        orina1->modiVo(verdad);
-        orina1->tiempoparabolico();
-        cout<<"Ab "<<tiempostart;
-        //tiempostart=orina1->gettiempoalcance();
-        timer2->start(tiempostart);
->>>>>>> Stashed changes
     }
     else if(ev->key()==Qt::Key_W && entradas==1)
     {
-<<<<<<< Updated upstream
         moverA=false;
         entradas=0;
-=======
-        moverA=true;
-        verdad=true;
-        orina1->modiVo(verdad);
-        orina1->tiempoparabolico();
-        //tiempostart=orina1->gettiempoalcance();
-        timer2->start(tiempostart);
->>>>>>> Stashed changes
     }
     else if(ev->key()==Qt::Key_D && entradas==1)
     {
-<<<<<<< Updated upstream
        moverD=false;
        entradas=0;
     }*/
-=======
-        moverD=true;
-        timer2->start(tiempostart);
-    }
-
-    if(ev->key()==Qt::Key_A && entradas==1)
-    {
-        moverI=false;
-        entradas=0;
-    }
-    else if(ev->key()==Qt::Key_S && entradas==1)
-    {
-        moverB=false;
-        entradas=0;
-    }
-    else if(ev->key()==Qt::Key_W && entradas==1)
-    {
-        moverA=false;
-        entradas=0;
-    }
-    else if(ev->key()==Qt::Key_D && entradas==1)
-    {
-       moverD=false;
-       entradas=0;
-    }
->>>>>>> Stashed changes
 }
 
 void MainWindow::aumentarPunt()
@@ -276,12 +190,9 @@ void MainWindow::variacionarea()
         area = 0;
     }
 }
-<<<<<<< Updated upstream
 
 void MainWindow::aleatorio()
 {
 
 }
 
-=======
->>>>>>> Stashed changes
