@@ -25,8 +25,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void keyPressEvent(QKeyEvent *ev);
-    void keyReleaseEvent(QKeyEvent *ev);
+    void keyPressEvent1(QKeyEvent *ev);
+    void keyReleaseEvent1(QKeyEvent *ev);
 
 signals:
     void aviso(int);
@@ -47,6 +47,7 @@ private:
     QTimer *timer;
     QTimer *timer2;
     QTimer *timeri;
+    QTimer *timeraleatorio;
 
     int puntuacion=0;
 
@@ -65,5 +66,6 @@ private:
 
     int area;
     int entradas=0;
+    int maquina=0;
 };
 #endif // MAINWINDOW_H

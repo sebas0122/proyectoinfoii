@@ -30,27 +30,27 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer,SIGNAL(timeout()), this, SLOT(animar()));
     timer->start(10);
 
-    Obstaculo* V1 = new Obstaculo();
+    Obstaculo* V1 = new Obstaculo(40);
     V1->setPos(35, 35);
     V1->setBrush(Qt::darkGray);
     scene->addItem(V1);
     vehiculos.push_back(V1);
 
-    Obstaculo* V2 = new Obstaculo();
+    Obstaculo* V2 = new Obstaculo(60);
     V2->setPos(180, 35);
-    V2->setBrush(Qt::darkGray);
+    V2->setBrush(Qt::green);
     scene->addItem(V2);
     vehiculos.push_back(V2);
 
-    Obstaculo* V3 = new Obstaculo();
+    Obstaculo* V3 = new Obstaculo(35);
     V3->setPos(350, 35);
-    V3->setBrush(Qt::darkGray);
+    V3->setBrush(Qt::red);
     scene->addItem(V3);
     vehiculos.push_back(V3);
 
-    Obstaculo* V4 = new Obstaculo();
+    Obstaculo* V4 = new Obstaculo(70);
     V4->setPos(500, 35);
-    V4->setBrush(Qt::darkGray);
+    V4->setBrush(Qt::blue);
     scene->addItem(V4);
     vehiculos.push_back(V4);
 
@@ -98,6 +98,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *ev)
     if(ev->key()==Qt::Key_W)
     {
         W=false;
+        usuario->v = 0;
     }
     else if(ev->key()==Qt::Key_D)
     {
@@ -110,12 +111,14 @@ void MainWindow::keyReleaseEvent(QKeyEvent *ev)
     else if(ev->key()==Qt::Key_S)
     {
         S=false;
+        usuario->v = 0;
     }
+    /*
     if (ev->key() == Qt::Key_W || ev->key() == Qt::Key_S)
    {
        usuario->v = 0;
    }
-
+    */
 }
 
 void MainWindow::animar()
@@ -206,7 +209,7 @@ void MainWindow::movimientoGasolina(){
 }
 
 void MainWindow::aumentarItems(){
-    Obstaculo* V = new Obstaculo();
+    Obstaculo* V = new Obstaculo(40);
     V->setPos(Carriles[(rand() % 4)],35);
     V->setBrush(Qt::darkGray);
     scene->addItem(V);

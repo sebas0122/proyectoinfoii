@@ -27,7 +27,7 @@ void Personaje::velocidades()
 void Personaje::posiciones()
 // calcula y Actualiza las posiciones
 {
-    _y = _y + (v * DT) + (0.5 * a * pow(DT,2));
-    setPos(x(), (_y));
+    _y = _y + (v * DT);
+    setPos(x(), _y);
     //qDebug() << "Posición y:" << _y;
 }

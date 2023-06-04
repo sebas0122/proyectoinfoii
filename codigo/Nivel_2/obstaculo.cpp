@@ -1,13 +1,13 @@
 #include "obstaculo.h"
 
-Obstaculo::Obstaculo()
+Obstaculo::Obstaculo(int _tamano)
 {
-
+    tamano=_tamano;
 }
 
 QRectF Obstaculo::boundingRect() const
 {
-    return QRectF(-35,-35,35,35);
+    return QRectF(-tamano,-tamano,tamano,tamano);
 }
 
 void Obstaculo::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

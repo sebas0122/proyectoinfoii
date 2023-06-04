@@ -46,6 +46,10 @@ MainWindow::MainWindow(QWidget *parent)
     timeri = new QTimer();
     connect(timeri, SIGNAL(timeout()), this, SLOT(variacionarea()));  // Cambiar SIGNAL por timeout()
     timeri->start(1000);
+
+    timeraleatorio=new QTimer();
+    connect(timeraleatorio, SIGNAL(timeout()), this, SLOT(aleatorio()));
+    timeraleatorio->start(4000);
 }
 
 MainWindow::~MainWindow()
@@ -193,6 +197,19 @@ void MainWindow::variacionarea()
 
 void MainWindow::aleatorio()
 {
-
+    srand(time(NULL));
+    maquina=rand() % 4+1;
+    if (maquina==1){
+        orina1->setPos(orina1->x()-10,orina1->y());
+    }
+    else if (maquina==2){
+        orina1->setPos(orina1->x()+10,orina1->y());
+    }
+    else if (maquina==3){
+        orina1->setPos(orina1->x(),orina1->y()-10);
+    }
+    else if (maquina==4){
+        orina1->setPos(orina1->x(),orina1->y()+10);
+    }
 }
 
