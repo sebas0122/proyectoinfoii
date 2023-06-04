@@ -2,7 +2,7 @@
 
 Gasolina::Gasolina()
 {
-    brush_ = Qt::darkGray;
+
 }
 
 QRectF Gasolina::boundingRect() const
@@ -12,12 +12,8 @@ QRectF Gasolina::boundingRect() const
 
 void Gasolina::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(brush_);
-    painter->drawRect(boundingRect());
-
+    painter->setBrush(Qt::yellow);
+    painter->drawEllipse(boundingRect());
 }
 
-void Gasolina::setBrush(const QBrush &brush)
-{
-    brush_ = brush;
-}
+

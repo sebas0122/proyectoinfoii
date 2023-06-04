@@ -25,14 +25,18 @@ public:
 public slots:
     void animar();
     void movimientoVehiculos();
-    void movimientoPeatones();
+    void movimientoGasolina();
+    //void movimientoPeatones();
     void subeGasolina();
     void bajaGasolina(int x);
+    void aumentarItems();
+    void Actualizar();
 
 signals:
-    void colisionGasolinallena();
-    void colisionGasolinavacia();
+    void colisionGasolina();
     void colisionObstaculo();
+    void acelera();
+    void freno();
 
 
 private:
@@ -43,11 +47,16 @@ private:
     QGraphicsLineItem* l3;
     QGraphicsLineItem* l4;
     Personaje* usuario;
-    QTimer *timer;
+    QTimer *timer, *timer2;
     void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *ev);
     bool W;
     bool D;
     bool A;
     bool S;
+    int gasolina=100;
+    QVector<Obstaculo*> vehiculos;
+    QVector<int> Carriles={35,180,350,500};
+    QVector<Gasolina*> g;
 };
 #endif // MAINWINDOW_H

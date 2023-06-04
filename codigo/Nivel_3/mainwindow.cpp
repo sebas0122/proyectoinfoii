@@ -44,7 +44,6 @@ MainWindow::MainWindow(QWidget *parent)
     B2->setPos(267, 35);
     B2->setBrush(Qt::yellow);
     B2->lleno=true;
-
     scene->addItem(B2);
     botellas.push_back(B2);
 

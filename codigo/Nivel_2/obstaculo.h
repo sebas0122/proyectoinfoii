@@ -11,6 +11,7 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void setBrush(const QBrush &brush);
     QRectF boundingRect() const;
+    int v=1;
 
 private:
     QBrush brush_;
