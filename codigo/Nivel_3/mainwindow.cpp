@@ -63,12 +63,17 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(timer,SIGNAL(timeout()), this, SLOT(movimientoBotellas()));
     connect(this,SIGNAL(colisionBotellallena()), this, SLOT(subeSalud()));
-    connect(this,SIGNAL(colisionBotellavacia()), this, SLOT(bajaSalud()));
+    connect(this, &MainWindow::colisionBotellavacia, this, [this]() {bajaSalud(5);});
     connect(timer, SIGNAL(timeout()), this, SLOT(movimientoEnemigos()));
-    connect(this, SIGNAL(colisionEnemigo()), this, SLOT(bajaSalud()));
+    connect(this, &MainWindow::colisionEnemigo, this, [this]() {bajaSalud(5);});
     connect(this,SIGNAL(salto()), this, SLOT(Actualizar()));
 
     timer->start(10);
+
+    timer2n3=new QTimer();
+    connect(timer2n3, SIGNAL(timeout()), this, SLOT(aumentarBotellas()));
+    connect(timer2n3, &QTimer::timeout, this, [this]() { bajaSalud(10); });
+    timer2n3->start(10000);
 }
 
 MainWindow::~MainWindow()
@@ -188,8 +193,8 @@ void MainWindow::subeSalud(){
     }
 }
 
-void MainWindow::bajaSalud(){
-    salud -= 5;
+void MainWindow::bajaSalud(int x){
+    salud -= x;
     ui->lcdNumber->display(salud);
 }
 
@@ -231,5 +236,20 @@ void MainWindow::keyReleaseEvent(QKeyEvent *ev)
         D=false;
     }
 
+}
+
+void MainWindow::aumentarBotellas(){
+    Botellas* B = new Botellas();
+    B->lleno=rand() % 2;
+    if(B->lleno){
+        B->setBrush(Qt::yellow);
+        B->setPos(35+(rand()%466),35);
+    }
+    else{
+        B->setBrush(Qt::darkGray);
+        B->setPos(35+(rand()%466),35);
+    }
+    scene->addItem(B);
+    botellas.push_back(B);
 }
 

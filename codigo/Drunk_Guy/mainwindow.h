@@ -86,8 +86,9 @@ public slots:
     void Actualizarn3();
     void movimientoBotellas();
     void movimientoEnemigos();
+    void aumentarBotellas();
     void subeSalud();
-    void bajaSalud();
+    void bajaSalud(int x);
 
 private slots:
     void nivel1();
@@ -127,13 +128,13 @@ private:
 
     int gasolina=100;
     QVector<Obstaculo*> vehiculos;
-    QVector<int> Carriles={35,180,350,500};
+    QVector<int> Carriles={60,200,340,470};
     QVector<Gasolina*> g;
 
     //NIVEL3
     Personaje3* usuarion3;
     QTimer *timern3;
-
+    //QTimer *timer2n3_;
     int salud=100;
     QVector<Botellas*> botellas;
 };

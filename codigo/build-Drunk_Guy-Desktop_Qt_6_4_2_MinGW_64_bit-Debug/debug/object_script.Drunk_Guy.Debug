@@ -8,4 +8,5 @@ debug/obstaculo.o
 debug/orina.o
 debug/personaje2.o
 debug/personaje3.o
+debug/qrc_images.o
 debug/moc_mainwindow.o

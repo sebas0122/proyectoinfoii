@@ -8,4 +8,5 @@ release/obstaculo.o
 release/orina.o
 release/personaje2.o
 release/personaje3.o
+release/qrc_images.o
 release/moc_mainwindow.o

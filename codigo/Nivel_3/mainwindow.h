@@ -31,7 +31,8 @@ public slots:
     void movimientoBotellas();
     void movimientoEnemigos();
     void subeSalud();
-    void bajaSalud();
+    void bajaSalud(int x);
+    void aumentarBotellas();
 
 
 signals:
@@ -50,6 +51,7 @@ private:
     QGraphicsLineItem* l4;
     Personaje* usuario;
     QTimer *timer;
+    QTimer *timer2n3;
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *ev);
 

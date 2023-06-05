@@ -73,7 +73,7 @@ void MainWindow::nivel1()
 
     timeraleatorio=new QTimer();
     connect(timeraleatorio, SIGNAL(timeout()), this, SLOT(aleatorio()));
-    timeraleatorio->start(4000);
+    timeraleatorio->start(1000);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *ev)
@@ -147,22 +147,22 @@ void MainWindow::Animar()
 {
     if(moverI)
     {
-        orina1->setPos(orina1->x()-10,orina1->y());
+        orina1->setPos(orina1->x()-20,orina1->y());
         moverI=false;
     }
     if(moverD)
     {
-        orina1->setPos(orina1->x()+10,orina1->y());
+        orina1->setPos(orina1->x()+20,orina1->y());
         moverD=false;
     }
     if(moverA)
     {
-        orina1->setPos(orina1->x(),orina1->y()-10);
+        orina1->setPos(orina1->x(),orina1->y()-20);
         moverA=false;
     }
     if(moverB)
     {
-        orina1->setPos(orina1->x(),orina1->y()+10);
+        orina1->setPos(orina1->x(),orina1->y()+20);
         moverB=false;
     }
     if(orina1->collidesWithItem(inodoro1))
@@ -307,12 +307,18 @@ void MainWindow::aleatorio()
 void MainWindow::nivel2()
 {
     //delete scene;
+    QPixmap pixmap2(":/images/Imagen2.png");  // Ruta y nombre de la imagen de fondo
+    QGraphicsPixmapItem* fondo1 = new QGraphicsPixmapItem(pixmap2);
+    fondo1->setPos(-70, 0);  // Establecer la posición del fondo en las coordenadas (0, 0)
+    fondo1->setScale(1.54);
+    fondo1->setZValue(-1);
     n2=true;
     ui->pushButton->hide();
     ui->pushButton_2->hide();
     ui->pushButton_3->hide();
     ui->label->hide();
     scene=new QGraphicsScene(0,0,500,400);
+    scene->addItem(fondo1);
     ui->graphicsView->setScene(scene);
     W=false;
     A=false;
@@ -336,25 +342,25 @@ void MainWindow::nivel2()
     timern2->start(10);
 
     Obstaculo* V1 = new Obstaculo(40);
-    V1->setPos(35, 35);
+    V1->setPos(60, 35);
     V1->setBrush(Qt::darkGray);
     scene->addItem(V1);
     vehiculos.push_back(V1);
 
     Obstaculo* V2 = new Obstaculo(60);
-    V2->setPos(180, 35);
+    V2->setPos(200, 35);
     V2->setBrush(Qt::green);
     scene->addItem(V2);
     vehiculos.push_back(V2);
 
     Obstaculo* V3 = new Obstaculo(35);
-    V3->setPos(350, 35);
+    V3->setPos(340, 35);
     V3->setBrush(Qt::red);
     scene->addItem(V3);
     vehiculos.push_back(V3);
 
     Obstaculo* V4 = new Obstaculo(70);
-    V4->setPos(500, 35);
+    V4->setPos(470, 35);
     V4->setBrush(Qt::blue);
     scene->addItem(V4);
     vehiculos.push_back(V4);
@@ -505,6 +511,11 @@ void MainWindow::Actualizar()
 
 void MainWindow::nivel3()
 {
+    QPixmap pixmap(":/images/Imagen3.png");  // Ruta y nombre de la imagen de fondo
+    QGraphicsPixmapItem* fondo = new QGraphicsPixmapItem(pixmap);
+    fondo->setPos(0, 0);  // Establecer la posición del fondo en las coordenadas (0, 0)
+    fondo->setScale(1.25);
+    fondo->setZValue(-1);
     n3=true;
     ui->pushButton->hide();
     ui->pushButton_2->hide();
@@ -512,6 +523,7 @@ void MainWindow::nivel3()
     ui->label->hide();
     scene=new QGraphicsScene(0,0,500,400);
     ui->graphicsView->setScene(scene);
+    scene->addItem(fondo);
     Wn3=false;
     An3=false;
     Dn3=false;
@@ -563,12 +575,17 @@ void MainWindow::nivel3()
 
     connect(timern3,SIGNAL(timeout()), this, SLOT(movimientoBotellas()));
     connect(this,SIGNAL(colisionBotellallena()), this, SLOT(subeSalud()));
-    connect(this,SIGNAL(colisionBotellavacia()), this, SLOT(bajaSalud()));
+    connect(this, &MainWindow::colisionBotellavacia, this, [this]() {bajaSalud(5);});
     connect(timern3, SIGNAL(timeout()), this, SLOT(movimientoEnemigos()));
-    connect(this, SIGNAL(colisionEnemigo()), this, SLOT(bajaSalud()));
+    connect(this, &MainWindow::colisionEnemigo, this, [this]() {bajaSalud(5);});
     connect(this,SIGNAL(salto()), this, SLOT(Actualizarn3()));
 
     timern3->start(10);
+
+    timer2n2=new QTimer();
+    connect(timer2n2, SIGNAL(timeout()), this, SLOT(aumentarBotellas()));
+    connect(timer2n2, &QTimer::timeout, this, [this]() { bajaSalud(10); });
+    timer2n2->start(10000);
 
 }
 
@@ -667,8 +684,8 @@ void MainWindow::subeSalud(){
     }
 }
 
-void MainWindow::bajaSalud(){
-    salud -= 5;
+void MainWindow::bajaSalud(int x){
+    salud -= x;
     ui->lcdNumber->display(salud);
 }
 
@@ -698,3 +715,19 @@ void MainWindow::movimientoEnemigos(){
     }
 
 }
+
+void MainWindow::aumentarBotellas(){
+    Botellas* B = new Botellas();
+    B->lleno=rand() % 2;
+    if(B->lleno){
+        B->setBrush(Qt::yellow);
+        B->setPos(35+(rand()%466),35);
+    }
+    else{
+        B->setBrush(Qt::darkGray);
+        B->setPos(35+(rand()%466),35);
+    }
+    scene->addItem(B);
+    botellas.push_back(B);
+}
+
