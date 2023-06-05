@@ -31,23 +31,23 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata1[6];
     char stringdata2[1];
     char stringdata3[11];
-    char stringdata4[17];
-    char stringdata5[18];
-    char stringdata6[8];
-    char stringdata7[6];
-    char stringdata8[7];
+    char stringdata4[11];
+    char stringdata5[17];
+    char stringdata6[18];
+    char stringdata7[8];
+    char stringdata8[6];
     char stringdata9[7];
-    char stringdata10[13];
-    char stringdata11[7];
-    char stringdata12[14];
-    char stringdata13[10];
-    char stringdata14[7];
-    char stringdata15[20];
-    char stringdata16[19];
+    char stringdata10[7];
+    char stringdata11[13];
+    char stringdata12[7];
+    char stringdata13[14];
+    char stringdata14[10];
+    char stringdata15[7];
+    char stringdata16[20];
     char stringdata17[13];
     char stringdata18[13];
     char stringdata19[2];
-    char stringdata20[14];
+    char stringdata20[11];
     char stringdata21[11];
 };
 #define QT_MOC_LITERAL(ofs, len) \
@@ -58,29 +58,30 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(11, 5),  // "aviso"
         QT_MOC_LITERAL(17, 0),  // ""
         QT_MOC_LITERAL(18, 10),  // "resultado1"
-        QT_MOC_LITERAL(29, 16),  // "colisionGasolina"
-        QT_MOC_LITERAL(46, 17),  // "colisionObstaculo"
-        QT_MOC_LITERAL(64, 7),  // "acelera"
-        QT_MOC_LITERAL(72, 5),  // "freno"
-        QT_MOC_LITERAL(78, 6),  // "nivel1"
-        QT_MOC_LITERAL(85, 6),  // "nivel2"
-        QT_MOC_LITERAL(92, 12),  // "aumentarPunt"
-        QT_MOC_LITERAL(105, 6),  // "Animar"
-        QT_MOC_LITERAL(112, 13),  // "variacionarea"
-        QT_MOC_LITERAL(126, 9),  // "aleatorio"
-        QT_MOC_LITERAL(136, 6),  // "animar"
-        QT_MOC_LITERAL(143, 19),  // "movimientoVehiculos"
-        QT_MOC_LITERAL(163, 18),  // "movimientoGasolina"
-        QT_MOC_LITERAL(182, 12),  // "subeGasolina"
-        QT_MOC_LITERAL(195, 12),  // "bajaGasolina"
-        QT_MOC_LITERAL(208, 1),  // "x"
-        QT_MOC_LITERAL(210, 13),  // "aumentarItems"
-        QT_MOC_LITERAL(224, 10)   // "Actualizar"
+        QT_MOC_LITERAL(29, 10),  // "resultado2"
+        QT_MOC_LITERAL(40, 16),  // "colisionGasolina"
+        QT_MOC_LITERAL(57, 17),  // "colisionObstaculo"
+        QT_MOC_LITERAL(75, 7),  // "acelera"
+        QT_MOC_LITERAL(83, 5),  // "freno"
+        QT_MOC_LITERAL(89, 6),  // "nivel1"
+        QT_MOC_LITERAL(96, 6),  // "nivel2"
+        QT_MOC_LITERAL(103, 12),  // "aumentarPunt"
+        QT_MOC_LITERAL(116, 6),  // "Animar"
+        QT_MOC_LITERAL(123, 13),  // "variacionarea"
+        QT_MOC_LITERAL(137, 9),  // "aleatorio"
+        QT_MOC_LITERAL(147, 6),  // "animar"
+        QT_MOC_LITERAL(154, 19),  // "movimientoVehiculos"
+        QT_MOC_LITERAL(174, 12),  // "subeGasolina"
+        QT_MOC_LITERAL(187, 12),  // "bajaGasolina"
+        QT_MOC_LITERAL(200, 1),  // "x"
+        QT_MOC_LITERAL(202, 10),  // "Actualizar"
+        QT_MOC_LITERAL(213, 10)   // "sumatiempo"
     },
     "MainWindow",
     "aviso",
     "",
     "resultado1",
+    "resultado2",
     "colisionGasolina",
     "colisionObstaculo",
     "acelera",
@@ -93,12 +94,11 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "aleatorio",
     "animar",
     "movimientoVehiculos",
-    "movimientoGasolina",
     "subeGasolina",
     "bajaGasolina",
     "x",
-    "aumentarItems",
-    "Actualizar"
+    "Actualizar",
+    "sumatiempo"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -114,7 +114,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
        1,    1,  128,    2, 0x06,    1 /* Public */,
@@ -123,9 +123,9 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        5,    0,  133,    2, 0x06,    5 /* Public */,
        6,    0,  134,    2, 0x06,    6 /* Public */,
        7,    0,  135,    2, 0x06,    7 /* Public */,
+       8,    0,  136,    2, 0x06,    8 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       8,    0,  136,    2, 0x08,    8 /* Private */,
        9,    0,  137,    2, 0x08,    9 /* Private */,
       10,    0,  138,    2, 0x08,   10 /* Private */,
       11,    0,  139,    2, 0x08,   11 /* Private */,
@@ -146,9 +146,9 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -179,6 +179,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'resultado1'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'resultado2'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'colisionGasolina'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'colisionObstaculo'
@@ -203,16 +205,14 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'movimientoVehiculos'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'movimientoGasolina'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'subeGasolina'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'bajaGasolina'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'aumentarItems'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'Actualizar'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'sumatiempo'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -226,23 +226,23 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->aviso((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 1: _t->resultado1(); break;
-        case 2: _t->colisionGasolina(); break;
-        case 3: _t->colisionObstaculo(); break;
-        case 4: _t->acelera(); break;
-        case 5: _t->freno(); break;
-        case 6: _t->nivel1(); break;
-        case 7: _t->nivel2(); break;
-        case 8: _t->aumentarPunt(); break;
-        case 9: _t->Animar(); break;
-        case 10: _t->variacionarea(); break;
-        case 11: _t->aleatorio(); break;
-        case 12: _t->animar(); break;
-        case 13: _t->movimientoVehiculos(); break;
-        case 14: _t->movimientoGasolina(); break;
+        case 2: _t->resultado2(); break;
+        case 3: _t->colisionGasolina(); break;
+        case 4: _t->colisionObstaculo(); break;
+        case 5: _t->acelera(); break;
+        case 6: _t->freno(); break;
+        case 7: _t->nivel1(); break;
+        case 8: _t->nivel2(); break;
+        case 9: _t->aumentarPunt(); break;
+        case 10: _t->Animar(); break;
+        case 11: _t->variacionarea(); break;
+        case 12: _t->aleatorio(); break;
+        case 13: _t->animar(); break;
+        case 14: _t->movimientoVehiculos(); break;
         case 15: _t->subeGasolina(); break;
         case 16: _t->bajaGasolina((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 17: _t->aumentarItems(); break;
-        case 18: _t->Actualizar(); break;
+        case 17: _t->Actualizar(); break;
+        case 18: _t->sumatiempo(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -263,29 +263,36 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         }
         {
             using _t = void (MainWindow::*)();
-            if (_t _q_method = &MainWindow::colisionGasolina; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &MainWindow::resultado2; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 2;
                 return;
             }
         }
         {
             using _t = void (MainWindow::*)();
-            if (_t _q_method = &MainWindow::colisionObstaculo; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &MainWindow::colisionGasolina; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 3;
                 return;
             }
         }
         {
             using _t = void (MainWindow::*)();
-            if (_t _q_method = &MainWindow::acelera; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &MainWindow::colisionObstaculo; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 4;
                 return;
             }
         }
         {
             using _t = void (MainWindow::*)();
-            if (_t _q_method = &MainWindow::freno; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &MainWindow::acelera; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 5;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)();
+            if (_t _q_method = &MainWindow::freno; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 6;
                 return;
             }
         }
@@ -336,27 +343,33 @@ void MainWindow::resultado1()
 }
 
 // SIGNAL 2
-void MainWindow::colisionGasolina()
+void MainWindow::resultado2()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 
 // SIGNAL 3
-void MainWindow::colisionObstaculo()
+void MainWindow::colisionGasolina()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 
 // SIGNAL 4
-void MainWindow::acelera()
+void MainWindow::colisionObstaculo()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 
 // SIGNAL 5
-void MainWindow::freno()
+void MainWindow::acelera()
 {
     QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
+}
+
+// SIGNAL 6
+void MainWindow::freno()
+{
+    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -25,8 +25,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void keyPressEvent1(QKeyEvent *ev);
-    void keyReleaseEvent1(QKeyEvent *ev);
+    void keyPressEvent(QKeyEvent *ev);
+    void keyReleaseEvent(QKeyEvent *ev);
 
 signals:
     void aviso(int);

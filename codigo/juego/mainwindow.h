@@ -52,18 +52,18 @@ signals:
 private slots:
     void nivel1();
     void nivel2();
-    void nivel3();
+    //void nivel3();
     void aumentarPunt();
     void Animar();
     void variacionarea();
     void aleatorio();
     void animar();
     void movimientoVehiculos();
-    void movimientoGasolina();
+    //void movimientoGasolina();
     //void movimientoPeatones();
     void subeGasolina();
     void bajaGasolina(int x);
-    void aumentarItems();
+    //void aumentarItems();
     void Actualizar();
     void sumatiempo();
 
@@ -108,7 +108,6 @@ private:
     bool S;
     int gasolina=100;
     int tiempo=0;
-    Gasolina* G;
     QVector<Obstaculo*> vehiculos;
     QVector<int> Carriles={35,180,350,500};
     QVector<Gasolina*> g;

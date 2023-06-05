@@ -1,0 +1,11 @@
+release/botellas.o
+release/enemigos.o
+release/gasolina.o
+release/inodoro.o
+release/main.o
+release/mainwindow.o
+release/obstaculo.o
+release/orina.o
+release/personaje2.o
+release/personaje3.o
+release/moc_mainwindow.o

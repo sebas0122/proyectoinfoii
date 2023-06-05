@@ -294,7 +294,7 @@ void MainWindow::nivel2()
         connect(this, SIGNAL(acelera()), this, SLOT(Actualizar()));
         connect(this, SIGNAL(freno()), this, SLOT(Actualizar()));
         connect(timer5,SIGNAL(timeout()),this, SLOT(sumatiempo()));
-        connect(this, SIGNAL(resultado2()),this, SLOT(nivel3()))
+        //connect(this, SIGNAL(resultado2()),this, SLOT(nivel3()));
 
 
         timer2=new QTimer();
@@ -396,20 +396,21 @@ void MainWindow::movimientoVehiculos(){
     }
 }
 
+/*
 void MainWindow::movimientoGasolina(){
     for (auto it = g.begin(); it != g.end(); ++it) {
-        Gasolina* G = *it;
+        Gasolina* Ga = *it;
 
-        if (usuario->collidesWithItem(G)) {
+        if (usuario->collidesWithItem(Ga)) {
             emit colisionGasolina();
-            G->setPos(Carriles[(rand() % 4)],35);
+            Ga->setPos(Carriles[(rand() % 4)],35);
         }
-        else if(G->collidesWithItem(l4)){
-            G->setPos(Carriles[(rand() % 4)],35);
+        else if(Ga->collidesWithItem(l4)){
+            Ga->setPos(Carriles[(rand() % 4)],35);
 
         }
         else{
-            G->setPos(G->x(), G->y()+1);
+            Ga->setPos(Ga->x(), Ga->y()+1);
         }
     }
 }
@@ -420,13 +421,13 @@ void MainWindow::aumentarItems(){
     V->setBrush(Qt::darkGray);
     scene->addItem(V);
     vehiculos.push_back(V);
-    Gasolina* G = new Gasolina();
-    G->setPos(Carriles[(rand() % 4)],35);
-    scene->addItem(G);
-    g.push_back(G);
+    Gasolina* Ga = new Gasolina();
+    Ga->setPos(Carriles[(rand() % 4)],35);
+    scene->addItem(Ga);
+    g.push_back(Ga);
 
 }
-
+*/
 void MainWindow::Actualizar()
 //Actualiza las velocidades y posiciones del cuerpo
 {

@@ -1,0 +1,11 @@
+debug/botellas.o
+debug/enemigos.o
+debug/gasolina.o
+debug/inodoro.o
+debug/main.o
+debug/mainwindow.o
+debug/obstaculo.o
+debug/orina.o
+debug/personaje2.o
+debug/personaje3.o
+debug/moc_mainwindow.o
