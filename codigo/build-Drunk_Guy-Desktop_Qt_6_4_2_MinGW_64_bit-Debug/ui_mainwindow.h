@@ -32,6 +32,9 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QLCDNumber *lcdNumber;
+    QLCDNumber *lcdNumber_2;
+    QLabel *label_2;
+    QLabel *label_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -62,7 +65,16 @@ public:
         pushButton_3->setGeometry(QRect(330, 330, 80, 24));
         lcdNumber = new QLCDNumber(centralwidget);
         lcdNumber->setObjectName("lcdNumber");
-        lcdNumber->setGeometry(QRect(650, 30, 64, 23));
+        lcdNumber->setGeometry(QRect(650, 10, 64, 23));
+        lcdNumber_2 = new QLCDNumber(centralwidget);
+        lcdNumber_2->setObjectName("lcdNumber_2");
+        lcdNumber_2->setGeometry(QRect(650, 40, 64, 23));
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(580, 10, 61, 20));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(590, 40, 49, 16));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -84,6 +96,8 @@ public:
         pushButton->setText(QCoreApplication::translate("MainWindow", "Ba\303\261o", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Carretera", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "Bar", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Puntuacion", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

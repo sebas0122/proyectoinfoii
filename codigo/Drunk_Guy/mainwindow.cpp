@@ -23,11 +23,17 @@ void MainWindow::Menu()
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(nivel1()));
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(nivel2()));
     connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(nivel3()));
+    ui->label_2->hide();
+    ui->label_3->hide();
+    ui->lcdNumber->hide();
+    ui->lcdNumber_2->hide();
 }
 
 void MainWindow::nivel1()
 {
     //delete scene;
+    ui->label_2->show();
+    ui->lcdNumber->show();
     QPixmap pixmap2(":/images/Imagen1.png");  // Ruta y nombre de la imagen de fondo
     QGraphicsPixmapItem* fondo1 = new QGraphicsPixmapItem(pixmap2);
     fondo1->setPos(-300, -380);  // Establecer la posición del fondo en las coordenadas (0, 0)
@@ -313,7 +319,12 @@ void MainWindow::aleatorio()
 
 void MainWindow::nivel2()
 {
-    ui->lcdNumber->display(gasolina);
+    ui->label_2->show();
+    ui->lcdNumber->show();
+    ui->label_3->setText("Gasolina");
+    ui->label_3->show();
+    ui->lcdNumber_2->display(gasolina);
+    ui->lcdNumber_2->show();
     //delete scene;
     QPixmap pixmap2(":/images/Imagen2.png");  // Ruta y nombre de la imagen de fondo
     QGraphicsPixmapItem* fondo1 = new QGraphicsPixmapItem(pixmap2);
@@ -386,6 +397,10 @@ void MainWindow::nivel2()
     connect(timer2n2, &QTimer::timeout, this, [this]() { bajaGasolina(10); });
     timer2n2->start(10000);
 
+    timer=new QTimer();
+    connect(timer, SIGNAL(timeout()),this,SLOT(aumentarPunt()));
+    timer->start(1000);
+
 }
 
 void MainWindow::animar()
@@ -422,18 +437,26 @@ void MainWindow::animar()
     {
         S = false;
     }
+
 }
 
 void MainWindow::subeGasolina(){
     if(gasolina<=95){
         gasolina += 5;
-        ui->lcdNumber->display(gasolina);
+        ui->lcdNumber_2->display(gasolina);
     }
 }
 
 void MainWindow::bajaGasolina(int x){
     gasolina -= x;
-    ui->lcdNumber->display(gasolina);
+    ui->lcdNumber_2->display(gasolina);
+    if (gasolina <= 0) {
+        QString puntajeStr = QString::number(puntuacion);
+        timer->stop();
+        QMessageBox::information(this, "Game Over", "El juego ha terminado.");
+        QMessageBox::information(this, "Puntaje", "Su puntaje fue: " + puntajeStr);
+        QApplication::quit();
+    }
 }
 
 void MainWindow::movimientoVehiculos(){
@@ -520,6 +543,12 @@ void MainWindow::Actualizar()
 
 void MainWindow::nivel3()
 {
+    ui->label_2->show();
+    ui->lcdNumber->show();
+    ui->label_3->setText("Salud");
+    ui->label_3->show();
+    ui->lcdNumber_2->display(salud);
+    ui->lcdNumber_2->show();
     ui->lcdNumber->display(salud);
     QPixmap pixmap(":/images/Imagen3.png");  // Ruta y nombre de la imagen de fondo
     QGraphicsPixmapItem* fondo = new QGraphicsPixmapItem(pixmap);
@@ -595,6 +624,10 @@ void MainWindow::nivel3()
     connect(timer2n2, SIGNAL(timeout()), this, SLOT(aumentarBotellas()));
     connect(timer2n2, &QTimer::timeout, this, [this]() { bajaSalud(10); });
     timer2n2->start(10000);
+
+    timer=new QTimer();
+    connect(timer, SIGNAL(timeout()),this,SLOT(aumentarPunt()));
+    timer->start(1000);
 
 }
 
@@ -689,13 +722,20 @@ void MainWindow::movimientoBotellas(){
 void MainWindow::subeSalud(){
     if(salud<=95){
         salud += 5;
-        ui->lcdNumber->display(salud);
+        ui->lcdNumber_2->display(salud);
     }
 }
 
 void MainWindow::bajaSalud(int x){
     salud -= x;
-    ui->lcdNumber->display(salud);
+    ui->lcdNumber_2->display(salud);
+    if (salud <= 0) {
+        QString puntajeStr = QString::number(puntuacion);
+        timer->stop();
+        QMessageBox::information(this, "Game Over", "El juego ha terminado.");
+        QMessageBox::information(this, "Puntaje", "Su puntaje fue: " + puntajeStr);
+        QApplication::quit();
+    }
 }
 
 void MainWindow::movimientoEnemigos(){
@@ -739,4 +779,5 @@ void MainWindow::aumentarBotellas(){
     scene->addItem(B);
     botellas.push_back(B);
 }
+
 
