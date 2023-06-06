@@ -2,7 +2,7 @@
 
 Botellas::Botellas()
 {
-    brush_ = Qt::darkGray;
+
 }
 
 QRectF Botellas::boundingRect() const
@@ -12,8 +12,16 @@ QRectF Botellas::boundingRect() const
 
 void Botellas::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(brush_);
-    painter->drawRect(boundingRect());
+    if(lleno){
+        QPixmap pixmap;
+        pixmap.load(":/images/cerveza.png");
+        painter->drawPixmap(boundingRect(),pixmap,pixmap.rect());
+    }
+    else{
+        QPixmap pixmap;
+        pixmap.load(":/images/mug.png");
+        painter->drawPixmap(boundingRect(),pixmap,pixmap.rect());
+    }
 
 }
 

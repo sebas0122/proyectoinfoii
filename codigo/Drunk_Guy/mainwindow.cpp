@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,12 +28,18 @@ void MainWindow::Menu()
 void MainWindow::nivel1()
 {
     //delete scene;
+    QPixmap pixmap2(":/images/Imagen1.png");  // Ruta y nombre de la imagen de fondo
+    QGraphicsPixmapItem* fondo1 = new QGraphicsPixmapItem(pixmap2);
+    fondo1->setPos(-300, -380);  // Establecer la posición del fondo en las coordenadas (0, 0)
+    fondo1->setScale(1.54);
+    fondo1->setZValue(-1);
     n1=true;
     ui->pushButton->hide();
     ui->pushButton_2->hide();
     ui->pushButton_3->hide();
     ui->label->hide();
     scene = new QGraphicsScene(-5000, -2500, 10000, 5000);
+    scene->addItem(fondo1);
     ui->graphicsView->setScene(scene);
     ui->graphicsView->setGeometry(0,0,1000,720);
 
@@ -306,6 +313,7 @@ void MainWindow::aleatorio()
 
 void MainWindow::nivel2()
 {
+    ui->lcdNumber->display(gasolina);
     //delete scene;
     QPixmap pixmap2(":/images/Imagen2.png");  // Ruta y nombre de la imagen de fondo
     QGraphicsPixmapItem* fondo1 = new QGraphicsPixmapItem(pixmap2);
@@ -347,19 +355,19 @@ void MainWindow::nivel2()
     scene->addItem(V1);
     vehiculos.push_back(V1);
 
-    Obstaculo* V2 = new Obstaculo(60);
+    Obstaculo* V2 = new Obstaculo(40);
     V2->setPos(200, 35);
     V2->setBrush(Qt::green);
     scene->addItem(V2);
     vehiculos.push_back(V2);
 
-    Obstaculo* V3 = new Obstaculo(35);
+    Obstaculo* V3 = new Obstaculo(40);
     V3->setPos(340, 35);
     V3->setBrush(Qt::red);
     scene->addItem(V3);
     vehiculos.push_back(V3);
 
-    Obstaculo* V4 = new Obstaculo(70);
+    Obstaculo* V4 = new Obstaculo(40);
     V4->setPos(470, 35);
     V4->setBrush(Qt::blue);
     scene->addItem(V4);
@@ -377,6 +385,7 @@ void MainWindow::nivel2()
     connect(timer2n2, SIGNAL(timeout()), this, SLOT(aumentarItems()));
     connect(timer2n2, &QTimer::timeout, this, [this]() { bajaGasolina(10); });
     timer2n2->start(10000);
+
 }
 
 void MainWindow::animar()
@@ -511,6 +520,7 @@ void MainWindow::Actualizar()
 
 void MainWindow::nivel3()
 {
+    ui->lcdNumber->display(salud);
     QPixmap pixmap(":/images/Imagen3.png");  // Ruta y nombre de la imagen de fondo
     QGraphicsPixmapItem* fondo = new QGraphicsPixmapItem(pixmap);
     fondo->setPos(0, 0);  // Establecer la posición del fondo en las coordenadas (0, 0)
@@ -571,7 +581,6 @@ void MainWindow::nivel3()
     E2=new Enemigos();
     E2->setPos(480,380);
     scene->addItem(E2);
-
 
     connect(timern3,SIGNAL(timeout()), this, SLOT(movimientoBotellas()));
     connect(this,SIGNAL(colisionBotellallena()), this, SLOT(subeSalud()));

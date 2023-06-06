@@ -12,6 +12,9 @@ QRectF Gasolina::boundingRect() const
 
 void Gasolina::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::yellow);
-    painter->drawEllipse(boundingRect());
+    //painter->setBrush(Qt::yellow);
+    //painter->drawEllipse(boundingRect());
+    QPixmap pixmap;
+    pixmap.load(":/images/gasoil.png");
+    painter->drawPixmap(boundingRect(),pixmap,pixmap.rect());
 }

@@ -12,8 +12,11 @@ QRectF Enemigos::boundingRect() const
 
 void Enemigos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::darkRed);
-    painter->drawRect(boundingRect());
+    //painter->setBrush(Qt::darkRed);
+    //painter->drawRect(boundingRect());
+    QPixmap pixmap;
+    pixmap.load(":/images/enemigo.png");
+    painter->drawPixmap(boundingRect(),pixmap,pixmap.rect());
 
 }
 

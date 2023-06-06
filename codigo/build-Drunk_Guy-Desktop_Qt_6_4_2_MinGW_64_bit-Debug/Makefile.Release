@@ -136,8 +136,16 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_images.cpp
 release/qrc_images.cpp: ../Drunk_Guy/images.qrc \
 		C:/Qt/6.4.2/mingw_64/bin/rcc.exe \
+		../Drunk_Guy/images/usuario3.png \
+		../Drunk_Guy/images/carroEnemigo.png \
+		../Drunk_Guy/images/enemigo.png \
+		../Drunk_Guy/images/usuario2.png \
 		../Drunk_Guy/images/Imagen3.png \
-		../Drunk_Guy/images/Imagen2.png
+		../Drunk_Guy/images/gasoil.png \
+		../Drunk_Guy/images/Imagen2.png \
+		../Drunk_Guy/images/mug.png \
+		../Drunk_Guy/images/Imagen1.png \
+		../Drunk_Guy/images/cerveza.png
 	C:\Qt\6.4.2\mingw_64\bin\rcc.exe -name images --no-zstd ..\Drunk_Guy\images.qrc -o release\qrc_images.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -1205,7 +1213,10 @@ release/mainwindow.o: ../Drunk_Guy/mainwindow.cpp ../Drunk_Guy/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstatusbar.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QWidget
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Drunk_Guy\mainwindow.cpp
 
 release/obstaculo.o: ../Drunk_Guy/obstaculo.cpp ../Drunk_Guy/obstaculo.h \

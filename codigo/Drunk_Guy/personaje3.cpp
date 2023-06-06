@@ -12,9 +12,11 @@ QRectF Personaje3::boundingRect() const
 
 void Personaje3::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::darkGreen);
-    painter->drawRect(boundingRect());
-
+    //painter->setBrush(Qt::darkGreen);
+    //painter->drawRect(boundingRect());
+    QPixmap pixmap;
+    pixmap.load(":/images/usuario3.png");
+    painter->drawPixmap(boundingRect(),pixmap,pixmap.rect());
 }
 
 void Personaje3::velocidades()

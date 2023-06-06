@@ -10,11 +10,15 @@ QRectF Personaje2::boundingRect() const
     return QRectF(-20, -20, 40, 40); // Ancho: 40, Alto: 40
 }
 
+
 void Personaje2::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::darkGreen);
-    painter->drawRect(boundingRect());
+    QPixmap pixmap;
+    pixmap.load(":/images/usuario2.png");
 
+    QPixmap pixmapInvertido = pixmap.transformed(QTransform().scale(1, -1)); // Invertir en el eje Y
+
+    painter->drawPixmap(boundingRect(), pixmapInvertido, pixmapInvertido.rect());
 }
 
 void Personaje2::velocidades()
