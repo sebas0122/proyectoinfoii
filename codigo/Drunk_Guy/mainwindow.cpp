@@ -66,6 +66,7 @@ void MainWindow::nivel1()
     inodoro1=new inodoro(area);
     orina1= new orina(1,10,2);
     orina1->setPos(orina1->x(),243);
+    orina1->setZValue(1);
 
     scene->addItem(orina1);
     scene->addItem(inodoro1);
@@ -293,9 +294,11 @@ void MainWindow::variacionarea()
 
     // Detiene el temporizador si el tamaño llega a 0
     if (area <= 0){
-        timeri->stop();
-        area = 0;
-        emit resultado1();
+        QString puntajeStr = QString::number(puntuacion);
+        timer->stop();
+        QMessageBox::information(this, "Game Over", "El juego ha terminado.");
+        QMessageBox::information(this, "Puntaje", "Su puntaje fue: " + puntajeStr);
+        QApplication::quit();
     }
 }
 
@@ -386,6 +389,7 @@ void MainWindow::nivel2()
 
     connect(timern2,SIGNAL(timeout()), this, SLOT(movimientoVehiculos()));
     connect(timern2,SIGNAL(timeout()), this, SLOT(movimientoGasolina()));
+    connect(timern2, SIGNAL(timeout()), this, SLOT(aleatorio_2()));
     connect(this, &MainWindow::colisionObstaculo, this, [this]() { bajaGasolina(5); });
     connect(this, SIGNAL(colisionGasolina()), this, SLOT(subeGasolina()));
     connect(this, SIGNAL(acelera()), this, SLOT(Actualizar()));
@@ -538,6 +542,18 @@ void MainWindow::Actualizar()
     if(usuario->collidesWithItem(l1)){
         usuario->setPos(usuario->x(),20);
         W=false;
+    }
+}
+
+void MainWindow::aleatorio_2()
+{
+    srand(time(NULL));
+    maquina=rand() % 2+1;
+    if (maquina==1){
+        usuario->setPos(usuario->x()-1,usuario->y());
+    }
+    else if (maquina==2){
+        usuario->setPos(usuario->x()+1,usuario->y());
     }
 }
 

@@ -80,6 +80,7 @@ public slots:
     void bajaGasolina(int x);
     void aumentarItems();
     void Actualizar();
+    void aleatorio_2();
 
     //NIVEL3
     void animarn3();

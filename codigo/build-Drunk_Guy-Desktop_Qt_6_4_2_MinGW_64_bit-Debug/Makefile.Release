@@ -141,6 +141,7 @@ release/qrc_images.cpp: ../Drunk_Guy/images.qrc \
 		../Drunk_Guy/images/enemigo.png \
 		../Drunk_Guy/images/usuario2.png \
 		../Drunk_Guy/images/Imagen3.png \
+		../Drunk_Guy/images/inodoro.jpg \
 		../Drunk_Guy/images/gasoil.png \
 		../Drunk_Guy/images/Imagen2.png \
 		../Drunk_Guy/images/mug.png \

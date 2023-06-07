@@ -18,6 +18,9 @@ QRectF inodoro::boundingRect() const
 void inodoro::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
     // Dibuja el inodoro
-    painter->setBrush(Qt::white);
-    painter->drawRect(-tamano/2, -tamano/2, tamano, tamano);
+    //painter->setBrush(Qt::white);
+    //painter->drawRect(-tamano/2, -tamano/2, tamano, tamano);
+    QPixmap pixmap;
+    pixmap.load(":/images/inodoro.jpg");
+    painter->drawPixmap(boundingRect(),pixmap,pixmap.rect());
 }
