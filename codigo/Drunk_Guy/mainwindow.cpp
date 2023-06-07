@@ -549,7 +549,7 @@ void MainWindow::nivel3()
     ui->label_3->show();
     ui->lcdNumber_2->display(salud);
     ui->lcdNumber_2->show();
-    ui->lcdNumber->display(salud);
+    ui->lcdNumber->display(puntuacion);
     QPixmap pixmap(":/images/Imagen3.png");  // Ruta y nombre de la imagen de fondo
     QGraphicsPixmapItem* fondo = new QGraphicsPixmapItem(pixmap);
     fondo->setPos(0, 0);  // Establecer la posición del fondo en las coordenadas (0, 0)
